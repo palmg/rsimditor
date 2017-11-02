@@ -3,7 +3,7 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, cwd: 'node_modules/r-simditor/styles/', src: ['**'], dest: 'src/style/'}
+                    {expand: true, cwd: 'node_modules/r-simditor/styles/', src: ['**'], dest: 'style/'}
                 ],
             },
         },

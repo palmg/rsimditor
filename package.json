@@ -2,9 +2,10 @@
   "name": "rsimditor",
   "version": "1.0.0",
   "description": "An Easy and Fast WYSIWYG Editor For React",
-  "main": "index.js",
+  "main": "lib/rsimditor.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "grunt && babel ./src/ -d ./lib/",
     "example": "webpack-dev-server --progress --colors --inline --config ./example/webpack"
   },
   "repository": {

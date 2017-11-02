@@ -3,9 +3,12 @@ An Easy and Fast WYSIWYG Editor For React
 基于simditor实现的React富文本编辑器。simditor相关内容请看：http://simditor.tower.im。
 
 ---
-##使用
+## 使用
+
 安装：
-`$ npm install rsimditor --save`
+
+ - `$ npm install rsimditor --save`
+
 编码：
 ```JavaScript
 import React from 'react'
@@ -15,9 +18,11 @@ import 'rsimditor/simditor.css'
 render(<RSimditor/>, document.getElementById('root'))
 ```
 可以直接使用源码中的例子：
-`$ git clone https://github.com/palmg/rsimditor.git`
-`$ npm install`
-`$ npm run example`
+
+ - `$ git clone https://github.com/palmg/rsimditor.git`
+ - `$ npm install`
+ - `$ npm run example`
+
 启动完成后浏览器输入 http://localhost:8080/ 即可看到效果。
 
 > **使用注意：**
@@ -27,7 +32,7 @@ render(<RSimditor/>, document.getElementById('root'))
 2.由于原始simditor直接通过jquery控制富文本编辑器的内容，请务必按照非受控组件的模式来使用`Rsimditor`组件。
 
 ---
-##API
+## API
 
 ---
 ### initValue `string`
@@ -66,7 +71,7 @@ codeLanguages | `` | [开发语言](#languages-description)
 
 
 ---
-###<span id="tool-description">工具栏说明</span>
+### <span id="tool-description">工具栏说明</span>
 工具栏目是一个列表结构。
 ```JavaScript
 var options = {
