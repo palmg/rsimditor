@@ -64,14 +64,14 @@ toolbarFloatOffset | `number` | 设定工具栏浮动的偏移量。默认为`0`
 toolbarHidden | `boolean` | 指定是否隐藏工具栏，`toolbarFloat`设定为`true`，该配置不会生效。
 defaultImage | `string` | 默认图片。当上传图片时，会有一个异步过程，通过指定`defaultImage`设定一个占位图片或gif加载效果，默认为`"images/image.png"`,如果图片不存在，直接显示上传文件的名称。
 tabIndent | `boolean` | 设定是否支持table键盘缩进。默认为`truen`。
-upload | `object` | 设定文件上传的方式和传输的服务器地址。默认为`false`，不上传图片，直接使用`base64`格式。请查看[图片上传说明](#图片上传说明)
-imageButton | `array` | `upload`启用时设定上传操作，支持`upload`,`external`，分别为本地上传或外部链接。两者都启用时，会呈现一个下拉菜单。默认为`['upload', 'external']`。
+upload | `object` | 设定文件上传的方式和传输的服务器地址。默认为`false`，不上传图片，直接使用`base64`格式。请查看[图片上传说明](#图片上传说明)。
+imageButton | `array` | `upload`启用时设定上传选项，可选值`upload`（本地上传）、`external`（外部链接）。两者都启用时，会呈现一个下拉菜单。默认为`['upload', 'external']`。
 pasteImage | `boolean` | 标记是否支持通过剪切板粘贴图片，仅支持chrome和Firefox。默认`false`。
 cleanPaste | `boolean` | 标记当用户从剪切板粘贴文字内容时是否清除样式。默认`false`。
-allowedTags | `array` | [HTML标签](#HTML标签)。
-allowedAttributes | `array` | [标签属性](#标签属性)。
-allowedStyles | `array` | [标签样式](#标签样式)
-codeLanguages | `array` | [格式化语言](#格式化语言)
+allowedTags | `array` | [支持标签](#标签)。
+allowedAttributes | `array` | [支持标签属性](#标签属性)。
+allowedStyles | `array` | [支持标签样式](#标签样式)
+codeLanguages | `array` | [支持格式化语言](#格式化语言)
 
 
 ### 工具栏说明
@@ -186,7 +186,7 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 
 [返回列表](#options-object)
 
-### HTML标签
+### 标签
 该参数可以指定富文本编辑器支持的标签，默认为：
 ```JavaScript
 ['br', 'span', 'a', 'img', 'b', 'strong', 'i', 'strike', 'u', 'font', 'p', 'ul', 'ol', 'li', 'blockquote', 'pre', 'code', 'h1', 'h2', 'h3', 'h4', 'hr']
@@ -258,3 +258,19 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 ```
 
 [返回列表](#options-object)
+
+### 接口方法
+除了直接使用props参数，`Rsimditor`还支持直接使用`ref`特性获取组件实例来操作富文本编辑器的接口，比使用props传递参数更高效。
+```
+var editor;
+<Rsimditor ref={ref=>{editor=ref}}
+```
+
+方法 | 说明
+------------ | -------------
+getValue | 获取富文本组件的值。是一个HTML结构的字符串。
+setValue | 设定富文本组件中呈现的内容。
+focus | 聚焦到富文本编辑器。
+blur | 移除焦点。
+
+
