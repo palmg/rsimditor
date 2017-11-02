@@ -96,7 +96,7 @@ var options = {
         'alignment'] //水平对齐方式
 }
 ```
-[返回列表](##options-object)
+[返回列表](#options-object)
 
 ---
 ### <span id="upload-description">图片上传说明</span>
@@ -166,7 +166,7 @@ Form.prototype.generate = function(file) {
 **服务器返回信息**
 上传完成后需要服务器告知组件是否上传成功。通常情况下，只要response返回200状态就认为上传文件成功，500等其状态码认为上传失败。
 除此之外，在`stateCode == 200`的情况下还可以通过结构化信息标记上传结果：
-```json
+```JavaScript
 {
   "success": false,
   "msg": "error message",
@@ -182,22 +182,22 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 
 > **图片网络位置设定**：除了通过服务器返回的`file_path`设定`src`。还在意在`formData`方法中通过设定`file.file_path`来设定`src`。
 
-[返回列表](##options-object)
+[返回列表](#options-object)
 
 ---
 ### <span id="tag-description">启用HTML标签</span>
 该参数可以指定富文本编辑器支持的标签，默认为：
-```json
+```JavaScript
 ['br', 'span', 'a', 'img', 'b', 'strong', 'i', 'strike', 'u', 'font', 'p', 'ul', 'ol', 'li', 'blockquote', 'pre', 'code', 'h1', 'h2', 'h3', 'h4', 'hr']
 ```
 当用户设定新的标签列表时，会合并当默认列表中。
 
-[返回列表](##options-object)
+[返回列表](#options-object)
 
 ---
 ### <span id="attribute-description">启用标签属性</span>
 设定每一个标签支持的属性(arrtibure)，默认为:
-```json
+```JavaScript
 {
     img: ['src', 'alt', 'width', 'height', 'data-non-image'],
     a: ['href', 'target'],
@@ -207,12 +207,12 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 ```
 当用户设定新的标签列表时，会合并当默认列表中。
 
-[返回列表](##options-object)
+[返回列表](#options-object)
 
 ---
 ###<span id="styles-description">启用标签样式</span>
 标签支持的内联样式。
-```json
+```JavaScript
 {
     span: ['color', 'font-size'],
     b: ['color'],
@@ -229,12 +229,12 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 ```
 当用户设定新的标签列表时，会合并当默认列表中。
 
-[返回列表](##options-object)
+[返回列表](#options-object)
 
 ---
 ### <span id="languages-description">格式化语言</span>
 富文本支持的格式化语言。
-```json
+```JavaScript
 [
   { name: 'Bash', value: 'bash' }
   { name: 'C++', value: 'c++' }
@@ -259,4 +259,4 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 ]
 ```
 
-[返回列表](##options-object)
+[返回列表](#options-object)
