@@ -40,23 +40,6 @@ module.exports = {
                 }
             ]
         }, {
-            test: /\.scss$/,
-            use: [
-                'style-loader',
-                'css-loader?modules&camelCase&importLoaders=1&localIdentName=[local][hash:base64:8]',
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        plugins: function () {
-                            return [
-                                require('autoprefixer')()
-                            ];
-                        }
-                    }
-                },
-                'sass-loader'
-            ]
-        }, {
             test: /\.(png|jpg|svg)$/,
             use: ['url-loader?limit=25000']
         }, {
@@ -65,7 +48,9 @@ module.exports = {
         }, {
             test: /\.html$/,
             use: ['html-loader?minimize=false']
-        }]
+        }, {
+            test: /\.(eot|woff|ttf)$/,
+            use: ['file-loader']}]
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
