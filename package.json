@@ -1,6 +1,6 @@
 {
   "name": "rsimditor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An Easy and Fast WYSIWYG Editor For React",
   "main": "lib/rsimditor.js",
   "scripts": {
@@ -25,9 +25,8 @@
   },
   "homepage": "https://github.com/palmg/rsimditor#readme",
   "dependencies": {
-    "r-simditor": "git+https://github.com/palmg/simditor.git",
-    "react": "^16.0.0",
-    "simditor": "git+https://github.com/palmg/simditor.git"
+    "r-simditor": "^2.3.7",
+    "react": "^16.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -55,8 +54,8 @@
     "precss": "^1.4.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^15.6.1",
-    "rsimditor-autosave": "git+https://github.com/palmg/simditor-autosave.git",
-    "rsimditor-fullscreen": "git+https://github.com/palmg/simditor-fullscreen.git",
+    "rsimditor-autosave": "^1.1.1",
+    "rsimditor-fullscreen": "^1.0.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.6.2",
     "webpack": "^2.6.1",
