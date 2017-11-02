@@ -1,5 +1,4 @@
 # Rsimditor
-An Easy and Fast WYSIWYG Editor For React
 基于simditor实现的React富文本编辑器。
 
 ---
@@ -8,6 +7,7 @@ An Easy and Fast WYSIWYG Editor For React
 安装：
 
  - `$ npm install rsimditor --save`
+ - `$ npm install jquery --save-dev`
 
 编码：
 ```JavaScript
@@ -27,18 +27,18 @@ render(<RSimditor/>, document.getElementById('root'))
 
 **使用注意：**
 
-1.如果使用webpack打包并引入css样式文件，请增加`file-loader`以处理simditor中的自定义文字。
+1. 如果使用webpack打包并引入css样式文件，请增加`file-loader`以处理simditor中的自定义文字。
 
  - 安装：`$ npm install file-loader --save-dev`
  - 配置：
-```JavaScript
-module.rules：[{
-    test:/\.(eot|woff|ttf)$/,
-    use: ['file-loader']
-}]
-```
-
-2.由于原始simditor直接通过jquery控制富文本编辑器的内容，请务必按照非受控组件的模式来使用`Rsimditor`组件。
+    ```JavaScript
+    module.rules：[{
+        test:/\.(eot|woff|ttf)$/,
+        use: ['file-loader']
+    }]
+    ```
+2. `Rsimditor`需要`jQuery`，请根据项目需要安装`jQuery`。
+3. 按照非受控组件的方式来使用`Rsimditor`组件。
 
 ## API
 
@@ -52,7 +52,7 @@ module.rules：[{
 当富文本编辑器的值发生改变时，会触发`onChange`方法。结构为：`(value)=>{return false}`。
 当返回一个`string`类型的值时，会使用返回值设定富文本编辑器的内容，所以可以通过`onChange`来处理数据过滤。
 
-### <span id="options-description">options</span> `object`
+### options `object`
 富文本编辑器的控制参数：
 
 选项 | 类型 | 说明
