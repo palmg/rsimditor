@@ -96,10 +96,10 @@ var options = {
         'alignment'] //水平对齐方式
 }
 ```
-[返回列表](#options-description)
+[返回列表](##options-object)
 
 ---
-###<span id="upload-description">图片上传说明</span>
+### <span id="upload-description">图片上传说明</span>
 在options参数中通过upload配置来设定文件上传：
 ```json
 var options = {
@@ -182,20 +182,20 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 
 > **图片网络位置设定**：除了通过服务器返回的`file_path`设定`src`。还在意在`formData`方法中通过设定`file.file_path`来设定`src`。
 
-[返回列表](#options-description)
+[返回列表](##options-object)
 
 ---
-###<span id="tag-description">启用HTML标签</span>
+### <span id="tag-description">启用HTML标签</span>
 该参数可以指定富文本编辑器支持的标签，默认为：
 ```json
 ['br', 'span', 'a', 'img', 'b', 'strong', 'i', 'strike', 'u', 'font', 'p', 'ul', 'ol', 'li', 'blockquote', 'pre', 'code', 'h1', 'h2', 'h3', 'h4', 'hr']
 ```
 当用户设定新的标签列表时，会合并当默认列表中。
 
-[返回列表](#options-description)
+[返回列表](##options-object)
 
 ---
-###<span id="attribute-description">启用标签属性</span>
+### <span id="attribute-description">启用标签属性</span>
 设定每一个标签支持的属性(arrtibure)，默认为:
 ```json
 {
@@ -207,7 +207,7 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 ```
 当用户设定新的标签列表时，会合并当默认列表中。
 
-[返回列表](#options-description)
+[返回列表](##options-object)
 
 ---
 ###<span id="styles-description">启用标签样式</span>
@@ -229,10 +229,10 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 ```
 当用户设定新的标签列表时，会合并当默认列表中。
 
-[返回列表](#options-description)
+[返回列表](##options-object)
 
 ---
-###<span id="languages-description">格式化语言</span>
+### <span id="languages-description">格式化语言</span>
 富文本支持的格式化语言。
 ```json
 [
@@ -259,4 +259,4 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 ]
 ```
 
-[返回列表](#options-description)
+[返回列表](##options-object)
