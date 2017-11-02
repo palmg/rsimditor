@@ -180,7 +180,7 @@ Form.prototype.generate = function(file) {
 ------------ | --------- | -------------
 success | `boolean` | 上传成功标记。除了指定为`false`，其他情况都视为上传成功。
 msg | `string` | 上传失败信息，之后在`success === false` 时生效。
-file_path | 'string' | `<img/>`标签的`src`属性数据。
+file_path | `string` | `<img/>`标签的`src`属性数据。
 
 > **图片网络位置设定**：除了通过服务器返回的`file_path`设定`src`。还在意在`formData`方法中通过设定`file.file_path`来设定`src`。
 
