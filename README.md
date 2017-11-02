@@ -26,6 +26,7 @@ render(<RSimditor/>, document.getElementById('root'))
 启动完成后浏览器输入 http://localhost:8080/ 即可看到效果。
 
 **使用注意：**
+
 1.如果使用webpack打包并引入css样式文件，请增加`file-loader`以处理simditor中的自定义文字。
 
  - 安装：`$ npm install file-loader --save-dev`
@@ -57,23 +58,23 @@ module.rules：[{
 选项 | 类型 | 说明
 ------------ | --------- | -------------
 placeholder | `string` | 背景文字，富文本内容为空时会显示该文字。
-toolbar | `array` | 富文本编辑器上方显示的工具栏。可以使用`"\|"`字符来分割。详细说明请看[工具栏说明](#tool-description)。
+toolbar | `array` | 富文本编辑器上方显示的工具栏。可以使用`"\|"`字符来分割。详细说明请看[工具栏说明](#工具栏说明)。
 toolbarFloat | `boolean` | 当屏幕滚动时，设定上方的工具栏是否浮动。默认为`true`。
 toolbarFloatOffset | `number` | 设定工具栏浮动的偏移量。默认为`0`。
 toolbarHidden | `boolean` | 指定是否隐藏工具栏，`toolbarFloat`设定为`true`，该配置不会生效。
 defaultImage | `string` | 默认图片。当上传图片时，会有一个异步过程，通过指定`defaultImage`设定一个占位图片或gif加载效果，默认为`"images/image.png"`,如果图片不存在，直接显示上传文件的名称。
 tabIndent | `boolean` | 设定是否支持table键盘缩进。默认为`truen`。
-upload | `object` | 设定文件上传的方式和传输的服务器地址。默认为`false`，不上传图片，直接使用`base64`格式。请查看[图片上传说明](#upload-description)
+upload | `object` | 设定文件上传的方式和传输的服务器地址。默认为`false`，不上传图片，直接使用`base64`格式。请查看[图片上传说明](#图片上传说明)
 imageButton | `array` | `upload`启用时设定上传操作，支持`upload`,`external`，分别为本地上传或外部链接。两者都启用时，会呈现一个下拉菜单。默认为`['upload', 'external']`。
 pasteImage | `boolean` | 标记是否支持通过剪切板粘贴图片，仅支持chrome和Firefox。默认`false`。
 cleanPaste | `boolean` | 标记当用户从剪切板粘贴文字内容时是否清除样式。默认`false`。
-allowedTags | `array` | [HTML标签](#tag-description)。
-allowedAttributes | `array` | [标签属性](#attribute-description)。
-allowedStyles | `array` | [标签样式](#styles-description)
-codeLanguages | `` | [开发语言](#languages-description)
+allowedTags | `array` | [HTML标签](#HTML标签)。
+allowedAttributes | `array` | [标签属性](#标签属性)。
+allowedStyles | `array` | [标签样式](#标签样式)
+codeLanguages | `array` | [格式化语言](#格式化语言)
 
 
-### <span id="tool-description">工具栏说明</span>
+### 工具栏说明
 工具栏目是一个列表结构。
 ```JavaScript
 var options = {
@@ -100,9 +101,9 @@ var options = {
 ```
 [返回列表](#options-object)
 
-### <span id="upload-description">图片上传说明</span>
+### 图片上传说明
 在options参数中通过upload配置来设定文件上传：
-```json
+```JavaScript
 var options = {
     upload:{
         url:'server path'
@@ -185,7 +186,7 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 
 [返回列表](#options-object)
 
-### <span id="tag-description">启用HTML标签</span>
+### HTML标签
 该参数可以指定富文本编辑器支持的标签，默认为：
 ```JavaScript
 ['br', 'span', 'a', 'img', 'b', 'strong', 'i', 'strike', 'u', 'font', 'p', 'ul', 'ol', 'li', 'blockquote', 'pre', 'code', 'h1', 'h2', 'h3', 'h4', 'hr']
@@ -194,7 +195,7 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 
 [返回列表](#options-object)
 
-### <span id="attribute-description">启用标签属性</span>
+### 标签属性
 设定每一个标签支持的属性(arrtibure)，默认为:
 ```JavaScript
 {
@@ -208,7 +209,7 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 
 [返回列表](#options-object)
 
-###<span id="styles-description">启用标签样式</span>
+### 标签样式
 标签支持的内联样式。
 ```JavaScript
 {
@@ -229,7 +230,7 @@ file_path | 'string' | `<img/>`标签的`src`属性数据。
 
 [返回列表](#options-object)
 
-### <span id="languages-description">格式化语言</span>
+### 格式化语言
 富文本支持的格式化语言。
 ```JavaScript
 [
