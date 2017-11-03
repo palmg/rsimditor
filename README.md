@@ -15,7 +15,8 @@ import React from 'react'
 import {render} from 'react-dom'
 import RSimditor from 'rsimditor'
 import 'rsimditor/simditor.css' //样式，可以加载自定义的样式
-render(<RSimditor/>, document.getElementById('root'))
+render(<RSimditor onChange={()=>{}} options={{}} />,
+    document.getElementById('root'))
 ```
 可以直接使用源码中的例子：
 
@@ -61,7 +62,7 @@ placeholder | `string` | 背景文字，富文本内容为空时会显示该文�
 toolbar | `array` | 富文本编辑器上方显示的工具栏。可以使用`"\|"`字符来分割。详细说明请看[工具栏说明](#工具栏说明)。
 toolbarFloat | `boolean` | 当屏幕滚动时，设定上方的工具栏是否浮动。默认为`true`。
 toolbarFloatOffset | `number` | 设定工具栏浮动的偏移量。默认为`0`。
-toolbarHidden | `boolean` | 指定是否隐藏工具栏，`toolbarFloat`设定为`true`，该配置不会生效。
+toolbarHidden | `boolean` | 指定是否隐藏工具栏，`toolbarFloat`设定为`true`该配置不会生效。
 defaultImage | `string` | 默认图片。当上传图片时，会有一个异步过程，通过指定`defaultImage`设定一个占位图片或gif加载效果，默认为`"images/image.png"`,如果图片不存在，直接显示上传文件的名称。
 tabIndent | `boolean` | 设定是否支持table键盘缩进。默认为`truen`。
 upload | `object` | 设定文件上传的方式和传输的服务器地址。默认为`false`，不上传图片，直接使用`base64`格式。请查看[图片上传说明](#图片上传说明)。
@@ -117,7 +118,7 @@ var options = {
 }
 ```
 **url `string`**
-文件上传目标服务器的地址。指定后，当文件上传时会想该地址发送xhr请求传递文件。启用后必须指定。
+文件上传目标服务器的地址。指定后，当文件上传时会向该地址发送xhr请求传递文件。启用后必须指定。
 
 **connectionCount `number`**
 同时上传图片的链接数。默认为3。
@@ -129,10 +130,10 @@ var options = {
 当文件向服务器传输失败后，是否使用base64格式添加到富文本编辑器中。默认为`false`。
 
 **params `object`**
-在上传文件时，像服务器发送的参数。会添加到FormData中。
+在上传文件时，向服务器发送的参数。会添加到FormData中。
 
 **fileKey `string`**
-想服务器传递的fileKey参数。同样使用FormData传递。
+向服务器传递的fileKey参数。同样使用FormData传递。
 
 **formData `function` `object`**
 `FormData`数据生成方法。当传递的参数比较复杂时可以自行设定`FormData`格式。formData参数可以传递一个方法，也可以传递一个实例（对象）。当传递实例时，必须实现`generate`方法。可以在`formData`方法中设定`file.file_path`来设定图片上传完成后的`src`路径。
@@ -179,10 +180,10 @@ Form.prototype.generate = function(file) {
 选项 | 类型 | 说明
 ------------ | --------- | -------------
 success | `boolean` | 上传成功标记。除了指定为`false`，其他情况都视为上传成功。
-msg | `string` | 上传失败信息，之后在`success === false` 时生效。
-file_path | 'string' | `<img/>`标签的`src`属性数据。
+msg | `string` | 上传失败信息，只有在`success === false` 时生效。
+file_path | `string` | `<img/>`标签的`src`属性数据。
 
-> **图片网络位置设定**：除了通过服务器返回的`file_path`设定`src`。还在意在`formData`方法中通过设定`file.file_path`来设定`src`。
+> **图片网络位置设定**：除了通过服务器返回的`file_path`设定`src`。还可以在`formData`方法中通过设定`file.file_path`来设定`src`。
 
 [返回列表](#options-object)
 
@@ -278,6 +279,7 @@ blur | 移除焦点。
 目前支持HTML5规范的自动存储和全屏特性。
 
 **自动存储**
+
 `$ npm install rsimditor-autosave --save`
 ```JavaScript
 //………………
@@ -287,6 +289,7 @@ import 'rsimditor-autosave' 引入包
 通过`autosave`参数指定自动保存的路径。当设定为`false`时关闭自动保存功能。
 
 **编辑器全屏**
+
 `$ npm install rsimditor-fullscreen --save`
 ```JavaScript
 //………………
