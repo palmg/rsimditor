@@ -14,7 +14,7 @@
 import React from 'react'
 import {render} from 'react-dom'
 import RSimditor from 'rsimditor'
-import 'rsimditor/simditor.css'
+import 'rsimditor/simditor.css' //样式，可以加载自定义的样式
 render(<RSimditor/>, document.getElementById('root'))
 ```
 可以直接使用源码中的例子：
@@ -180,7 +180,7 @@ Form.prototype.generate = function(file) {
 ------------ | --------- | -------------
 success | `boolean` | 上传成功标记。除了指定为`false`，其他情况都视为上传成功。
 msg | `string` | 上传失败信息，之后在`success === false` 时生效。
-file_path | `string` | `<img/>`标签的`src`属性数据。
+file_path | 'string' | `<img/>`标签的`src`属性数据。
 
 > **图片网络位置设定**：除了通过服务器返回的`file_path`设定`src`。还在意在`formData`方法中通过设定`file.file_path`来设定`src`。
 
@@ -189,7 +189,7 @@ file_path | `string` | `<img/>`标签的`src`属性数据。
 ### 标签
 该参数可以指定富文本编辑器支持的标签，默认为：
 ```JavaScript
-['br', 'span', 'a', 'img', 'b', 'strong', 'i', 'strike', 'u', 'font', 'p', 'ul', 'ol', 'li', 'blockquote', 'pre', 'code', 'h1', 'h2', 'h3', 'h4', 'hr']
+    ['br', 'span', 'a', 'img', 'b', 'strong', 'i', 'strike', 'u', 'font', 'p', 'ul', 'ol', 'li', 'blockquote', 'pre', 'code', 'h1', 'h2', 'h3', 'h4', 'hr']
 ```
 当用户设定新的标签列表时，会合并当默认列表中。
 
@@ -273,4 +273,25 @@ setValue | 设定富文本组件中呈现的内容。
 focus | 聚焦到富文本编辑器。
 blur | 移除焦点。
 
+## 应用扩展
 
+目前支持HTML5规范的自动存储和全屏特性。
+
+**自动存储**
+`$ npm install rsimditor-autosave --save`
+```JavaScript
+//………………
+import 'rsimditor-autosave' 引入包
+<Rsimditor options={{autosave: 'rsimditor-autosave-content'}}/>
+```
+通过`autosave`参数指定自动保存的路径。当设定为`false`时关闭自动保存功能。
+
+**编辑器全屏**
+`$ npm install rsimditor-fullscreen --save`
+```JavaScript
+//………………
+import 'rsimditor-fullscreen'
+import 'rsimditor-fullscreen/styles/simditor-fullscreen.css' //全屏按钮的图标样式
+<Rsimditor options={{toolbar: ['fullscreen']}}/>
+```
+`toolbar`参数标记全屏按钮出现的位置。
