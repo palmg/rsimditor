@@ -26,7 +26,7 @@
   "homepage": "https://github.com/palmg/rsimditor#readme",
   "dependencies": {
     "r-simditor": "^2.3.7",
-    "react": "^16.0.0"
+    "react": "^16.1.x"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -52,7 +52,7 @@
     "node-sass": "^4.1.1",
     "postcss-loader": "^1.2.1",
     "precss": "^1.4.0",
-    "react-dom": "^16.0.0",
+    "react-dom": "^16.1.x",
     "react-test-renderer": "^15.6.1",
     "rsimditor-autosave": "^1.1.1",
     "rsimditor-fullscreen": "^1.0.1",
