@@ -1,6 +1,6 @@
 {
   "name": "rsimditor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An Easy and Fast WYSIWYG Editor For React",
   "main": "lib/rsimditor.js",
   "scripts": {
