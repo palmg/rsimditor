@@ -56,7 +56,7 @@ class App extends React.Component {
 
     componentDidMount() {
         const _this = this
-        $.getJSON('http://file.mlhang.com/res/policy/get', {}, function (res) {
+        $.getJSON('http://file.mahoooo.com/res/policy/get', {}, function (res) {
             _this.setState({upParams: res})
         })
     }

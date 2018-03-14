@@ -1,6 +1,6 @@
 {
   "name": "rsimditor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "An Easy and Fast WYSIWYG Editor For React",
   "main": "lib/rsimditor.js",
   "scripts": {
@@ -25,11 +25,11 @@
   },
   "homepage": "https://github.com/palmg/rsimditor#readme",
   "dependencies": {
-    "r-simditor": "^2.3.7",
-    "react": "^16.1.x"
+    "r-simditor": "^2.3.9",
+    "react": "^16.2.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
+    "autoprefixer": "^7.2.6",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.2.7",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -42,23 +42,23 @@
     "classnames": "^2.2.5",
     "css-loader": "^0.26.0",
     "file-loader": "^0.10.1",
-    "grunt": "^1.0.1",
+    "grunt": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.24.1",
     "jest": "^20.0.4",
-    "jquery": "^3.2.1",
+    "jquery": "^3.3.1",
     "json-loader": "^0.5.4",
-    "node-sass": "^4.1.1",
+    "node-sass": "^4.8.2",
     "postcss-loader": "^1.2.1",
     "precss": "^1.4.0",
-    "react-dom": "^16.1.x",
+    "react-dom": "^16.2.0",
     "react-test-renderer": "^15.6.1",
     "rsimditor-autosave": "^1.1.1",
     "rsimditor-fullscreen": "^1.0.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.6.2",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.9.3"
+    "webpack-dev-server": "^2.11.2"
   }
 }
